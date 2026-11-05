@@ -49,15 +49,14 @@
   .tile { display:flex; flex-direction:column; min-height:196px; border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; background:var(--card); }
   .tile h2 { margin-top:6px; font-size:22px; letter-spacing:-0.03em; font-weight:700; }
   .tile .body { margin-top:8px; color:var(--muted); font-size:15px; line-height:1.45; }
-  .tile .slot { margin-top:auto; min-height:44px; }
+  .tile .slot { margin-top:auto; min-height:44px; display:flex; align-items:flex-end; }
+  .soon { display:inline-flex; align-items:center; height:32px; padding:0 12px; border:1px solid #2c2c2e; border-radius:999px; color:var(--fg); font-size:13px; font-weight:600; letter-spacing:-0.01em; }
   .note { margin-top:18px; font-size:13px; color:var(--muted); }
 
-  .shelf { margin:56px auto 0; }
-  .shelf img { width:100%; height:auto; display:block; border-radius:18px; }
   .cap { margin-top:14px; text-align:center; font-size:13px; color:var(--muted); }
   .cap a { color:var(--fg); text-decoration:underline; text-decoration-style:dotted; text-underline-offset:3px; }
 
-  .screen { margin:36px auto 0; max-width:920px; }
+  .screen { margin:56px auto 0; max-width:920px; }
   .bezel { background:#000; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:0 30px 80px -36px rgba(0,0,0,.85); aspect-ratio:16/9; }
   .bezel img { width:100%; height:100%; object-fit:cover; display:block; }
   .strip { display:flex; gap:8px; margin-top:12px; }
@@ -135,7 +134,7 @@
     .strip { flex-wrap:wrap; }
     .strip button { flex:1 1 calc(25% - 8px); }
     .strip button img { height:56px; }
-    .shelf img, .bezel { border-radius:14px; }
+    .bezel { border-radius:14px; }
   }
   @media (prefers-reduced-motion: reduce) { .posters img, .sos .arr { transition:none !important; } }
 </style>
@@ -157,7 +156,7 @@
           <p class="platform">Apple TV</p>
           <h2>Wizuale</h2>
           <p class="body">Classic Milkdrop presets, the same kind Winamp used, full screen.</p>
-          <div class="slot" aria-hidden="true"></div>
+          <div class="slot"><p class="soon">Coming soon</p></div>
         </article>
         <article class="tile">
           <p class="platform">iPhone</p>
@@ -168,11 +167,6 @@
       </div>
       <p class="note">No account.</p>
     </header>
-
-    <figure class="shelf">
-      <img src="assets/top-shelf.jpg?v=2" width="4640" height="1440" alt="Wizuale on the Apple TV shelf: a glowing, folded form in cyan, gold and violet.">
-      <figcaption class="cap">On the Apple TV shelf, before you open it.</figcaption>
-    </figure>
 
     <figure class="screen">
       <div class="bezel">
