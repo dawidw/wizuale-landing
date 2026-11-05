@@ -1,13 +1,14 @@
 # Wizuale
 
-> Wizuale is two separate apps. On Apple TV, real Milkdrop presets fill the screen when you play a record or music on the television. Wizuale Mic is a second app, for iPhone, on the same Wi-Fi. After it connects, the phone shows the Apple TV and sends the sound in the room so the visuals can follow what you hear. You can pick a preset on the phone, or let them advance on their own.
+> Wizuale is two separate apps. On Apple TV, classic Milkdrop presets, the kind Winamp used, fill the screen when you play a record or music on the television. The TV looks up the song and takes its BPM from GetSongBPM, so the picture has a tempo even without a microphone. Wizuale Mic is a second app, for iPhone, on the same Wi-Fi. After it connects, the phone shows the Apple TV and the picture bounces to the beat in the room. You can pick a preset on the phone, or let them advance on their own.
 
 Wizuale is an independent app built by Dawid Woźniak and Sature. The microphone audio stays on the local Wi-Fi between the iPhone and the Apple TV. There is no account.
 
 ## What it does
 
-- Full screen Milkdrop presets on Apple TV
-- Wizuale Mic, a separate iPhone app, sends the sound in the room over the same Wi-Fi
+- Full screen classic Milkdrop presets on Apple TV, the kind Winamp used
+- BPM from GetSongBPM, from the song title and artist, even with no microphone
+- Wizuale Mic, a separate iPhone app, sends the sound in the room over the same Wi-Fi so the picture bounces to the beat
 - The phone shows which Apple TV it is connected to
 - Pick a preset, or leave auto-advance on
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wizuale: full screen visuals for Apple TV</title>
-<meta name="description" content="Wizuale is two apps. On Apple TV, real Milkdrop presets fill the screen. Wizuale Mic, a separate iPhone app on the same Wi-Fi, sends the sound in the room so the picture can follow it, and lets you pick the preset.">
+<meta name="description" content="Wizuale is two apps. On Apple TV, classic Milkdrop presets, the kind Winamp used, fill the screen. The TV takes BPM from GetSongBPM. Wizuale Mic, a separate iPhone app on the same Wi-Fi, makes the picture bounce to the beat in the room.">
 <meta name="keywords" content="Apple TV visuals, Milkdrop presets, music visualizer, Wizuale, Wizuale Mic, iPhone, full screen">
 <meta name="author" content="Dawid Woźniak">
 <link rel="canonical" href="https://wizuale.dawidw.pl/">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Wizuale">
 <meta property="og:title" content="Wizuale: full screen visuals for Apple TV">
-<meta property="og:description" content="Two apps. Wizuale fills the Apple TV with real Milkdrop presets. Wizuale Mic, on an iPhone in the same Wi-Fi, sends the sound in the room so the picture can follow it.">
+<meta property="og:description" content="Classic Milkdrop presets on Apple TV, the kind Winamp used. BPM from GetSongBPM, and a bounce to the beat when Wizuale Mic is connected.">
 <meta property="og:url" content="https://wizuale.dawidw.pl/">
 <meta property="og:image" content="https://wizuale.dawidw.pl/og-image.jpg">
 <meta property="og:image:width" content="2400">
@@ -24,10 +24,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@Dawidwu">
 <meta name="twitter:title" content="Wizuale: full screen visuals for Apple TV">
-<meta name="twitter:description" content="Two apps. Wizuale fills the Apple TV with real Milkdrop presets. Wizuale Mic, on an iPhone in the same Wi-Fi, sends the sound in the room so the picture can follow it.">
+<meta name="twitter:description" content="Classic Milkdrop presets on Apple TV, the kind Winamp used. BPM from GetSongBPM, and a bounce to the beat when Wizuale Mic is connected.">
 <meta name="twitter:image" content="https://wizuale.dawidw.pl/og-image.jpg">
 <meta name="twitter:image:alt" content="Wizuale. Three full screen visuals, and the line: visuals for Apple TV, a second app for iPhone.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wizuale","description":"Wizuale is two apps. On Apple TV, real Milkdrop presets fill the screen. Wizuale Mic, a separate iPhone app on the same Wi-Fi, sends the sound in the room so the picture can follow it, and lets you pick the preset.","url":"https://wizuale.dawidw.pl/","image":"https://wizuale.dawidw.pl/og-image.jpg","operatingSystem":"tvOS, iOS","applicationCategory":"MultimediaApplication","author":{"@type":"Person","name":"Dawid Woźniak","url":"https://dawidw.pl"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wizuale","description":"Wizuale is two apps. On Apple TV, classic Milkdrop presets fill the screen. The TV takes BPM from GetSongBPM. Wizuale Mic, on the same Wi-Fi, makes the picture bounce to the beat in the room.","url":"https://wizuale.dawidw.pl/","image":"https://wizuale.dawidw.pl/og-image.jpg","operatingSystem":"tvOS, iOS","applicationCategory":"MultimediaApplication","author":{"@type":"Person","name":"Dawid Woźniak","url":"https://dawidw.pl"}}</script>
 <style>
   :root { --bg:#000; --fg:#f5f5f7; --muted:#8e8e93; --line:#1c1c1e; --card:#0b0b0c; --accent:#d2b0ff; }
   * { box-sizing:border-box; margin:0; padding:0; }
@@ -108,6 +108,7 @@
   .sos:hover .posters img:nth-child(3) { transform:translateY(-4px) scale(1.06); }
   .mini { width:76px; height:68px; flex:none; }
   .mini svg { width:76px; height:68px; display:block; }
+  .appico { width:56px; height:56px; border-radius:14px; flex:none; display:block; object-fit:cover; }
   .fine { display:flex; justify-content:space-between; align-items:center; gap:12px 24px; flex-wrap:wrap; margin-top:28px; padding-top:20px; border-top:1px solid var(--line); }
   .fine .made { color:var(--muted); }
   .fine .made a { color:var(--fg); font-weight:600; white-space:nowrap; transition:color .2s ease; }
@@ -138,36 +139,36 @@
 <body>
   <div class="wrap">
     <nav>
-      <a class="brand" href="https://wizuale.dawidw.pl/"><img src="icon.png" width="26" height="26" alt="">Wizuale</a>
+      <a class="brand" href="https://wizuale.dawidw.pl/"><img src="icon.png?v=2" width="26" height="26" alt="">Wizuale</a>
       <span class="links"><a href="#tv">Apple TV</a><a href="#iphone">iPhone</a></span>
     </nav>
 
     <header class="hero">
-      <img class="mark" src="icon.png" width="84" height="84" alt="">
+      <img class="mark" src="icon.png?v=2" width="84" height="84" alt="">
       <h1>Wizuale</h1>
       <p class="tagline">The picture fills the TV.</p>
-      <p class="lead">Two apps. <b>Wizuale</b> plays real Milkdrop presets, full screen, on Apple TV. <b>Wizuale Mic</b> is separate, on your iPhone. Same Wi-Fi, and the picture follows the sound in the room.</p>
+      <p class="lead">Two apps. <b>Wizuale</b> plays classic Milkdrop presets, the same kind Winamp used, full screen on Apple TV. <b>Wizuale Mic</b> is separate, on your iPhone. Same Wi-Fi, and the picture follows the sound in the room.</p>
       <p class="note">Apple TV and iPhone. No account.</p>
     </header>
 
     <figure class="shelf">
-      <img src="assets/top-shelf.jpg" width="1920" height="596" alt="Wizuale on the Apple TV shelf: a glowing, folded form in cyan, gold and violet.">
+      <img src="assets/top-shelf.jpg?v=2" width="4640" height="1440" alt="Wizuale on the Apple TV shelf: a glowing, folded form in cyan, gold and violet.">
       <figcaption class="cap">On the Apple TV shelf, before you open it.</figcaption>
     </figure>
 
     <figure class="screen">
       <div class="bezel">
-        <img id="frame" src="assets/visuals/storm.jpg" width="480" height="270" alt="A bright yellow and black Milkdrop preset, full screen.">
+        <img id="frame" src="assets/visuals/storm.jpg?v=2" width="1920" height="1080" alt="A bright yellow and black Milkdrop preset, full screen.">
       </div>
       <div class="strip" role="tablist" aria-label="Presets">
-        <button type="button" role="tab" class="is-on" aria-selected="true" data-src="assets/visuals/storm.jpg" data-alt="A bright yellow and black Milkdrop preset, full screen."><img src="assets/visuals/storm.jpg" alt=""></button>
-        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/graffiti.jpg" data-alt="A kaleidoscopic Milkdrop preset in red, green and blue."><img src="assets/visuals/graffiti.jpg" alt=""></button>
-        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/photon.jpg" data-alt="A blue symmetrical Milkdrop preset with a bright center."><img src="assets/visuals/photon.jpg" alt=""></button>
-        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/spiral.jpg" data-alt="A rainbow ring on black, a Milkdrop preset."><img src="assets/visuals/spiral.jpg" alt=""></button>
-        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/splash.jpg" data-alt="A burst of color, a Milkdrop preset."><img src="assets/visuals/splash.jpg" alt=""></button>
-        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/waves.jpg" data-alt="Wavy stripes in red, white and blue, a Study of Space preset."><img src="assets/visuals/waves.jpg" alt=""></button>
-        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/neon.jpg" data-alt="A neon pinwheel, a Study of Space preset."><img src="assets/visuals/neon.jpg" alt=""></button>
-        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/rings.jpg" data-alt="Soft concentric rings, a Study of Space preset."><img src="assets/visuals/rings.jpg" alt=""></button>
+        <button type="button" role="tab" class="is-on" aria-selected="true" data-src="assets/visuals/storm.jpg?v=2" data-alt="A bright yellow and black Milkdrop preset, full screen."><img src="assets/visuals/storm.jpg?v=2" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/graffiti.jpg?v=2" data-alt="A kaleidoscopic Milkdrop preset in red, green and blue."><img src="assets/visuals/graffiti.jpg?v=2" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/photon.jpg?v=2" data-alt="A blue symmetrical Milkdrop preset with a bright center."><img src="assets/visuals/photon.jpg?v=2" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/spiral.jpg?v=2" data-alt="A rainbow ring on black, a classic Milkdrop preset."><img src="assets/visuals/spiral.jpg?v=2" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/splash.jpg?v=2" data-alt="A burst of color, a classic Milkdrop preset."><img src="assets/visuals/splash.jpg?v=2" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/waves.jpg?v=2" data-alt="Wavy stripes in red, white and blue, a Study of Space preset."><img src="assets/visuals/waves.jpg?v=2" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/neon.jpg?v=2" data-alt="A neon pinwheel, a Study of Space preset."><img src="assets/visuals/neon.jpg?v=2" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/rings.jpg?v=2" data-alt="Soft concentric rings, a Study of Space preset."><img src="assets/visuals/rings.jpg?v=2" alt=""></button>
       </div>
       <figcaption class="cap">Open it, and a preset takes the whole screen. A few of them are here, including some from <a href="https://studyofspace.gallery">Study of Space</a>.</figcaption>
     </figure>
@@ -179,13 +180,13 @@
         <article class="app" id="tv">
           <p class="platform">Apple TV</p>
           <h3>Wizuale</h3>
-          <img class="shot wide" src="assets/icon-tv.jpg" width="800" height="480" alt="">
+          <img class="shot wide" src="assets/icon-tv.jpg?v=2" width="800" height="480" alt="">
           <p>Put on a record, or play music on the TV. The preset fills the screen. Move to another one with the remote, or let the next one come on by itself.</p>
         </article>
         <article class="app" id="iphone">
           <p class="platform">iPhone</p>
           <h3>Wizuale Mic</h3>
-          <img class="shot square" src="icon.png" width="256" height="256" alt="">
+          <img class="shot square" src="icon.png?v=2" width="512" height="512" alt="">
           <p class="status"><span class="dot" aria-hidden="true"></span>Connected to Apple TV</p>
           <p>A second app. On the same Wi-Fi it finds the television and shows that connection on the phone. It sends the sound in the room, so the visuals react to what you hear. Pick a preset there, or leave them to advance.</p>
         </article>
@@ -202,6 +203,11 @@
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 16c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/><rect x="11" y="4" width="6" height="10" rx="3"/></svg></div>
         <h3>The sound in the room</h3>
         <p>Connect the iPhone app. From then on, the picture reacts to what the phone hears.</p>
+      </article>
+      <article class="f">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h3.2l2.2-7 3.2 12 3-9 2 4H24"/><circle cx="8" cy="8" r="1.3" fill="currentColor" stroke="none"/></svg></div>
+        <h3>BPM, then the beat</h3>
+        <p>The Apple TV looks up the song and takes its BPM from GetSongBPM, so the picture has a tempo even with no microphone. Connect Wizuale Mic on the same Wi-Fi and the image bounces to the beat it hears in the room.</p>
       </article>
       <article class="f">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="8" height="8" rx="1.5"/><rect x="16" y="4" width="8" height="8" rx="1.5"/><rect x="4" y="16" width="8" height="8" rx="1.5"/><rect x="16" y="16" width="8" height="8" rx="1.5"/></svg></div>
@@ -225,15 +231,15 @@
     <div class="wrap">
       <div class="ftop">
         <a class="sos" href="https://studyofspace.gallery" target="_blank" rel="noopener">
-          <span class="posters" aria-hidden="true"><img src="assets/sos/stripewave.svg" alt=""><img src="assets/sos/ring-orchid.svg" alt=""><img src="assets/sos/ring-flame.svg" alt=""></span>
+          <img class="appico" src="assets/apps/studyofspace.png?v=2" width="180" height="180" alt="">
           <span class="txt"><span class="k">Looking for a cool wallpaper?</span><span class="v"><span class="line">Try <b>Study of Space</b> for free<span class="arr">&#8599;</span></span></span></span>
         </a>
         <a class="sos" href="https://pssst.dawidw.pl" target="_blank" rel="noopener">
-          <span class="mini" aria-hidden="true"><svg viewBox="0 0 76 68"><rect x="6" y="14" width="64" height="42" rx="8" fill="#141418" stroke="#2c2c2e"/><path d="M28 14h20v8.5c0 5-3.4 7.5-10 7.5s-10-2.5-10-7.5V14z" fill="#000"/><circle cx="46" cy="20" r="3" fill="#0A84FF"/></svg></span>
+          <img class="appico" src="assets/apps/pssst.png?v=2" width="512" height="512" alt="">
           <span class="txt"><span class="k">Your bot wants something</span><span class="v"><span class="line"><b>Pssst</b>, the notch companion<span class="arr">&#8599;</span></span></span></span>
         </a>
         <a class="sos" href="https://awake.dawidw.pl" target="_blank" rel="noopener">
-          <span class="mini" aria-hidden="true"><svg viewBox="0 0 76 68"><rect x="6" y="14" width="64" height="42" rx="8" fill="#141418" stroke="#2c2c2e"/><g fill="none" stroke="#ff9f0a" stroke-width="1.7" stroke-linecap="round"><circle cx="38" cy="35" r="6"/><path d="M38 22v3.2M38 44.8V48M25 35h3.2M47.8 35H51M28.2 25.2l2.2 2.2M45.6 42.6l2.2 2.2M47.8 25.2l-2.2 2.2M30.4 42.6l-2.2 2.2"/></g></svg></span>
+          <img class="appico" src="assets/apps/awake.png?v=2" width="512" height="512" alt="">
           <span class="txt"><span class="k">Keep the Mac awake</span><span class="v"><span class="line"><b>Awake</b>, in the menu bar<span class="arr">&#8599;</span></span></span></span>
         </a>
       </div>

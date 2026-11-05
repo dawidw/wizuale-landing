@@ -47,6 +47,7 @@
   .sos:hover .posters img:nth-child(3) { transform:translateY(-4px) scale(1.06); }
   .mini { width:76px; height:68px; flex:none; }
   .mini svg { width:76px; height:68px; display:block; }
+  .appico { width:56px; height:56px; border-radius:14px; flex:none; display:block; object-fit:cover; }
   .fine { display:flex; justify-content:space-between; align-items:center; gap:12px 24px; flex-wrap:wrap; margin-top:28px; padding-top:20px; border-top:1px solid var(--line); }
   .fine .made { color:var(--muted); }
   .fine .made a { color:var(--fg); font-weight:600; white-space:nowrap; transition:color .2s ease; }
@@ -67,20 +68,23 @@
 </head>
 <body>
 <nav class="wrap">
-  <a class="brand" href="index.html"><img src="icon.png" width="26" height="26" alt="">Wizuale</a>
+  <a class="brand" href="index.html"><img src="icon.png?v=2" width="26" height="26" alt="">Wizuale</a>
 </nav>
 <main class="legal wrap">
   <h1>Privacy Policy</h1>
   <p class="updated">Effective: 5 November 2026. Last updated: 5 November 2026.</p>
 
   <h2>Short version</h2>
-  <p>Wizuale is two apps, one on Apple TV and one on iPhone. Wizuale Mic uses the microphone and sends that sound over your own Wi-Fi to the Apple TV, so the visuals can react. That audio is not uploaded to us. There is no account, and the apps do not include analytics or tracking.</p>
+  <p>Wizuale is two apps, one on Apple TV and one on iPhone. Wizuale Mic uses the microphone and sends that sound over your own Wi-Fi to the Apple TV, so the visuals can react. That audio is not uploaded to us. The TV may send a song title and artist to GetSongBPM to read the tempo. There is no account, and the apps do not include analytics or tracking.</p>
 
   <h2>Who we are</h2>
   <p>Wizuale is made and run by plain d. Dawid Woźniak, a sole proprietorship (JDG) registered in Poland, which is the controller for anything covered by this policy. Contact: <a href="mailto:dawid@plaind.pl">dawid@plaind.pl</a>.</p>
 
   <h2>The two apps</h2>
-  <p>Wizuale on Apple TV plays Milkdrop presets full screen. Wizuale Mic is a separate app for iPhone. It is how the television hears the room. You do not sign in to either app.</p>
+  <p>Wizuale on Apple TV plays classic Milkdrop presets full screen. Wizuale Mic is a separate app for iPhone. It is how the television hears the room. You do not sign in to either app.</p>
+
+  <h2>Song tempo</h2>
+  <p>When a song is playing, the Apple TV app sends the title and the artist to GetSongBPM, and uses the tempo it gets back. That request is the song name, not the sound from the microphone. If the song is not found, the picture still runs. Wizuale Mic does not send the room audio to that service. The microphone stream stays on your Wi-Fi, between the phone and the television.</p>
 
   <h2>Sound from the iPhone</h2>
   <p>Wizuale Mic asks to use the microphone, because that is how it hears the room. It also needs the local network, so it can find the Apple TV on the same Wi-Fi. Once the television answers, the phone shows that it is connected, by the Apple TV’s name.</p>
@@ -102,15 +106,15 @@
   <div class="wrap">
     <div class="ftop">
       <a class="sos" href="https://studyofspace.gallery" target="_blank" rel="noopener">
-        <span class="posters" aria-hidden="true"><img src="assets/sos/stripewave.svg" alt=""><img src="assets/sos/ring-orchid.svg" alt=""><img src="assets/sos/ring-flame.svg" alt=""></span>
+          <img class="appico" src="assets/apps/studyofspace.png?v=2" width="180" height="180" alt="">
         <span class="txt"><span class="k">Looking for a cool wallpaper?</span><span class="v"><span class="line">Try <b>Study of Space</b> for free<span class="arr">&#8599;</span></span></span></span>
       </a>
       <a class="sos" href="https://pssst.dawidw.pl" target="_blank" rel="noopener">
-        <span class="mini" aria-hidden="true"><svg viewBox="0 0 76 68"><rect x="6" y="14" width="64" height="42" rx="8" fill="#141418" stroke="#2c2c2e"/><path d="M28 14h20v8.5c0 5-3.4 7.5-10 7.5s-10-2.5-10-7.5V14z" fill="#000"/><circle cx="46" cy="20" r="3" fill="#0A84FF"/></svg></span>
+          <img class="appico" src="assets/apps/pssst.png?v=2" width="512" height="512" alt="">
         <span class="txt"><span class="k">Your bot wants something</span><span class="v"><span class="line"><b>Pssst</b>, the notch companion<span class="arr">&#8599;</span></span></span></span>
       </a>
       <a class="sos" href="https://awake.dawidw.pl" target="_blank" rel="noopener">
-        <span class="mini" aria-hidden="true"><svg viewBox="0 0 76 68"><rect x="6" y="14" width="64" height="42" rx="8" fill="#141418" stroke="#2c2c2e"/><g fill="none" stroke="#ff9f0a" stroke-width="1.7" stroke-linecap="round"><circle cx="38" cy="35" r="6"/><path d="M38 22v3.2M38 44.8V48M25 35h3.2M47.8 35H51M28.2 25.2l2.2 2.2M45.6 42.6l2.2 2.2M47.8 25.2l-2.2 2.2M30.4 42.6l-2.2 2.2"/></g></svg></span>
+          <img class="appico" src="assets/apps/awake.png?v=2" width="512" height="512" alt="">
         <span class="txt"><span class="k">Keep the Mac awake</span><span class="v"><span class="line"><b>Awake</b>, in the menu bar<span class="arr">&#8599;</span></span></span></span>
       </a>
     </div>
