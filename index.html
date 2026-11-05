@@ -44,8 +44,12 @@
   .hero .mark { width:84px; height:84px; border-radius:20px; display:block; margin:0 auto 28px; box-shadow:0 16px 40px -18px rgba(210,176,255,.55); }
   .hero h1 { font-size:clamp(52px, 8vw, 92px); line-height:.92; letter-spacing:-0.045em; font-weight:700; }
   .hero .tagline { margin-top:14px; font-size:clamp(20px, 2.6vw, 26px); font-weight:600; letter-spacing:-0.02em; color:var(--accent); }
-  .hero p.lead { margin:22px auto 0; max-width:560px; font-size:clamp(18px, 2.2vw, 21px); color:var(--muted); }
-  .hero p.lead b { color:var(--fg); font-weight:500; }
+  .kicker { margin-top:36px; font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); }
+  .pair { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:18px auto 0; max-width:680px; text-align:left; }
+  .tile { display:flex; flex-direction:column; min-height:196px; border:1px solid var(--line); border-radius:18px; padding:22px 22px 18px; background:var(--card); }
+  .tile h2 { margin-top:6px; font-size:22px; letter-spacing:-0.03em; font-weight:700; }
+  .tile .body { margin-top:8px; color:var(--muted); font-size:15px; line-height:1.45; }
+  .tile .slot { margin-top:auto; min-height:44px; }
   .note { margin-top:18px; font-size:13px; color:var(--muted); }
 
   .shelf { margin:56px auto 0; }
@@ -125,7 +129,7 @@
     .hero { padding-top:28px; }
     .hero .mark { width:72px; height:72px; margin-bottom:22px; }
     .nav .links { gap:14px; }
-    .apps, .features, .ftop { grid-template-columns:1fr; }
+    .apps, .features, .ftop, .pair { grid-template-columns:1fr; }
     .split { padding-top:64px; }
     .closing { padding-top:64px; padding-bottom:72px; }
     .strip { flex-wrap:wrap; }
@@ -147,8 +151,22 @@
       <img class="mark" src="icon.png?v=2" width="84" height="84" alt="">
       <h1>Wizuale</h1>
       <p class="tagline">The picture fills the TV.</p>
-      <p class="lead">Two apps. <b>Wizuale</b> plays classic Milkdrop presets, the same kind Winamp used, full screen on Apple TV. <b>Wizuale Mic</b> is separate, on your iPhone. Same Wi-Fi, and the picture follows the sound in the room.</p>
-      <p class="note">Apple TV and iPhone. No account.</p>
+      <p class="kicker">Two apps</p>
+      <div class="pair">
+        <article class="tile">
+          <p class="platform">Apple TV</p>
+          <h2>Wizuale</h2>
+          <p class="body">Classic Milkdrop presets, the same kind Winamp used, full screen.</p>
+          <div class="slot" aria-hidden="true"></div>
+        </article>
+        <article class="tile">
+          <p class="platform">iPhone</p>
+          <h2>Wizuale Mic</h2>
+          <p class="body">A separate app on the same Wi-Fi. The picture follows the sound in the room.</p>
+          <div class="slot" aria-hidden="true"></div>
+        </article>
+      </div>
+      <p class="note">No account.</p>
     </header>
 
     <figure class="shelf">
