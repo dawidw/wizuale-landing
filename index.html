@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wizuale: full screen visuals for Apple TV</title>
+<meta name="description" content="Wizuale is two apps. On Apple TV, real Milkdrop presets fill the screen. Wizuale Mic, a separate iPhone app on the same Wi-Fi, sends the sound in the room so the picture can follow it, and lets you pick the preset.">
+<meta name="keywords" content="Apple TV visuals, Milkdrop presets, music visualizer, Wizuale, Wizuale Mic, iPhone, full screen">
+<meta name="author" content="Dawid Woźniak">
+<link rel="canonical" href="https://wizuale.dawidw.pl/">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wizuale">
+<meta property="og:title" content="Wizuale: full screen visuals for Apple TV">
+<meta property="og:description" content="Two apps. Wizuale fills the Apple TV with real Milkdrop presets. Wizuale Mic, on an iPhone in the same Wi-Fi, sends the sound in the room so the picture can follow it.">
+<meta property="og:url" content="https://wizuale.dawidw.pl/">
+<meta property="og:image" content="https://wizuale.dawidw.pl/og-image.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta property="og:image:alt" content="Wizuale. Three full screen visuals, and the line: visuals for Apple TV, a second app for iPhone.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@Dawidwu">
+<meta name="twitter:title" content="Wizuale: full screen visuals for Apple TV">
+<meta name="twitter:description" content="Two apps. Wizuale fills the Apple TV with real Milkdrop presets. Wizuale Mic, on an iPhone in the same Wi-Fi, sends the sound in the room so the picture can follow it.">
+<meta name="twitter:image" content="https://wizuale.dawidw.pl/og-image.jpg">
+<meta name="twitter:image:alt" content="Wizuale. Three full screen visuals, and the line: visuals for Apple TV, a second app for iPhone.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wizuale","description":"Wizuale is two apps. On Apple TV, real Milkdrop presets fill the screen. Wizuale Mic, a separate iPhone app on the same Wi-Fi, sends the sound in the room so the picture can follow it, and lets you pick the preset.","url":"https://wizuale.dawidw.pl/","image":"https://wizuale.dawidw.pl/og-image.jpg","operatingSystem":"tvOS, iOS","applicationCategory":"MultimediaApplication","author":{"@type":"Person","name":"Dawid Woźniak","url":"https://dawidw.pl"}}</script>
+<style>
+  :root { --bg:#000; --fg:#f5f5f7; --muted:#8e8e93; --line:#1c1c1e; --card:#0b0b0c; --accent:#d2b0ff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { background:var(--bg); color:var(--fg); color-scheme:dark; font:16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 28px; }
+  nav { display:flex; justify-content:space-between; align-items:center; height:72px; gap:16px; }
+  nav .brand { display:flex; align-items:center; gap:10px; font-weight:600; letter-spacing:-0.02em; font-size:16px; }
+  nav .brand img { width:26px; height:26px; border-radius:7px; display:block; }
+  nav .links { display:flex; gap:18px; font-size:14px; color:var(--muted); }
+  nav .links a:hover { color:var(--fg); }
+
+  .hero { text-align:center; padding-top:48px; }
+  .hero .mark { width:84px; height:84px; border-radius:20px; display:block; margin:0 auto 28px; box-shadow:0 16px 40px -18px rgba(210,176,255,.55); }
+  .hero h1 { font-size:clamp(52px, 8vw, 92px); line-height:.92; letter-spacing:-0.045em; font-weight:700; }
+  .hero .tagline { margin-top:14px; font-size:clamp(20px, 2.6vw, 26px); font-weight:600; letter-spacing:-0.02em; color:var(--accent); }
+  .hero p.lead { margin:22px auto 0; max-width:560px; font-size:clamp(18px, 2.2vw, 21px); color:var(--muted); }
+  .hero p.lead b { color:var(--fg); font-weight:500; }
+  .note { margin-top:18px; font-size:13px; color:var(--muted); }
+
+  .shelf { margin:56px auto 0; }
+  .shelf img { width:100%; height:auto; display:block; border-radius:18px; }
+  .cap { margin-top:14px; text-align:center; font-size:13px; color:var(--muted); }
+  .cap a { color:var(--fg); text-decoration:underline; text-decoration-style:dotted; text-underline-offset:3px; }
+
+  .screen { margin:36px auto 0; max-width:920px; }
+  .bezel { background:#000; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:0 30px 80px -36px rgba(0,0,0,.85); aspect-ratio:16/9; }
+  .bezel img { width:100%; height:100%; object-fit:cover; display:block; }
+  .strip { display:flex; gap:8px; margin-top:12px; }
+  .strip button { flex:1; min-width:0; padding:0; border:0; border-radius:8px; overflow:hidden; background:#000; cursor:pointer; opacity:.48; box-shadow:0 0 0 0 transparent; }
+  .strip button img { width:100%; height:54px; object-fit:cover; display:block; pointer-events:none; }
+  .strip button.is-on { opacity:1; box-shadow:0 0 0 2px var(--accent); }
+  .strip button:focus-visible { outline:2px solid #fff; outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce) { .strip button { transition:none; } }
+
+  .split { padding-top:96px; }
+  .split h2 { font-size:clamp(28px, 4vw, 40px); letter-spacing:-0.03em; font-weight:700; line-height:1.1; }
+  .split .section-lead { margin-top:12px; max-width:520px; color:var(--muted); font-size:18px; }
+  .apps { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px; }
+  .app { border:1px solid var(--line); border-radius:18px; padding:28px 24px 26px; background:var(--card); }
+  .platform { font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); font-weight:600; }
+  .app h3 { margin-top:8px; font-size:32px; letter-spacing:-0.03em; font-weight:700; }
+  .app .shot { margin-top:20px; display:block; }
+  .app .shot.wide { width:156px; height:94px; object-fit:cover; border-radius:12px; }
+  .app .shot.square { width:72px; height:72px; border-radius:16px; }
+  .status { margin-top:18px; display:flex; align-items:center; gap:8px; font-size:14px; font-weight:600; letter-spacing:-0.01em; }
+  .dot { width:8px; height:8px; border-radius:50%; background:#32d74b; box-shadow:0 0 0 4px rgba(50,215,75,.16); flex:none; }
+  .app p { margin-top:12px; color:var(--muted); font-size:16px; }
+
+  .features { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding-top:16px; padding-bottom:8px; }
+  .f { border:1px solid var(--line); border-radius:16px; padding:28px 24px 26px; background:var(--card); }
+  .f .ic { height:44px; display:flex; align-items:flex-end; margin-bottom:18px; color:var(--accent); }
+  .f .ic svg { width:28px; height:28px; display:block; }
+  .f h3 { font-size:17px; font-weight:600; letter-spacing:-0.015em; }
+  .f p { margin-top:8px; color:var(--muted); font-size:15px; }
+
+  .closing { text-align:center; padding-top:96px; padding-bottom:104px; }
+  .closing h2 { font-size:clamp(28px, 4.4vw, 40px); letter-spacing:-0.03em; font-weight:700; line-height:1.15; }
+  .closing p { margin-top:12px; color:var(--muted); }
+
+  footer { border-top:1px solid var(--line); padding:64px 0 32px; color:var(--muted); font-size:13px; }
+  .ftop { display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; }
+  .sos { display:flex; align-items:center; gap:12px; min-width:0; border:1px solid var(--line); border-radius:14px; padding:12px 16px 12px 12px; background:var(--card); color:var(--muted); overflow:hidden; transition:border-color .25s ease, background .25s ease; }
+  .sos:hover { border-color:#2c2c2e; background:#101012; }
+  .sos .txt { display:flex; flex-direction:column; gap:4px; min-width:0; }
+  .sos .k { font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#636366; }
+  .sos .v { display:block; font-size:14px; line-height:1.35; font-weight:600; letter-spacing:-0.01em; color:var(--fg); }
+  .sos .v b { color:var(--accent); font-weight:600; }
+  .sos .arr { display:inline-block; margin-left:4px; color:var(--muted); transition:transform .25s ease, color .25s ease; }
+  .sos:hover .arr { transform:translate(3px, -3px); color:var(--accent); }
+  .posters { position:relative; width:76px; height:68px; flex:none; }
+  .posters img { position:absolute; left:23px; top:5px; width:30px; height:auto; aspect-ratio:3/4; object-fit:cover; border-radius:4px; border:1px solid #2c2c2e; transition:transform .35s cubic-bezier(.3,1.4,.5,1); }
+  .posters img:nth-child(1) { transform:translateY(12px) rotate(-8deg) translateX(-10px); }
+  .posters img:nth-child(2) { transform:translateY(12px) rotate(6deg) translateX(10px); }
+  .posters img:nth-child(3) { transform:translateY(16px); }
+  .sos:hover .posters img:nth-child(1) { transform:translateY(0) rotate(-16deg) translate(-20px, 3px); }
+  .sos:hover .posters img:nth-child(2) { transform:translateY(0) rotate(14deg) translate(20px, 3px); }
+  .sos:hover .posters img:nth-child(3) { transform:translateY(-4px) scale(1.06); }
+  .mini { width:76px; height:68px; flex:none; }
+  .mini svg { width:76px; height:68px; display:block; }
+  .fine { display:flex; justify-content:space-between; align-items:center; gap:12px 24px; flex-wrap:wrap; margin-top:28px; padding-top:20px; border-top:1px solid var(--line); }
+  .fine .made { color:var(--muted); }
+  .fine .made a { color:var(--fg); font-weight:600; white-space:nowrap; transition:color .2s ease; }
+  .fine .made a:hover { color:var(--accent); }
+  .fine .made .mark { display:inline-block; width:1.05em; height:1.05em; margin:0 0.3em 0 0.1em; vertical-align:-0.17em; color:currentColor; }
+  .fine .made .mark .brand-glyph { fill:var(--bg); }
+  .fine .note2 { color:#636366; }
+  .fine .left { display:flex; gap:6px 14px; flex-wrap:wrap; align-items:baseline; }
+  .fine .links { display:flex; gap:20px; }
+  .fine .links a:hover { color:var(--fg); }
+
+  @media (max-width:860px) {
+    .wrap { padding:0 20px; }
+    .hero { padding-top:28px; }
+    .hero .mark { width:72px; height:72px; margin-bottom:22px; }
+    .nav .links { gap:14px; }
+    .apps, .features, .ftop { grid-template-columns:1fr; }
+    .split { padding-top:64px; }
+    .closing { padding-top:64px; padding-bottom:72px; }
+    .strip { flex-wrap:wrap; }
+    .strip button { flex:1 1 calc(25% - 8px); }
+    .strip button img { height:56px; }
+    .shelf img, .bezel { border-radius:14px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .posters img, .sos .arr { transition:none !important; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="https://wizuale.dawidw.pl/"><img src="icon.png" width="26" height="26" alt="">Wizuale</a>
+      <span class="links"><a href="#tv">Apple TV</a><a href="#iphone">iPhone</a></span>
+    </nav>
+
+    <header class="hero">
+      <img class="mark" src="icon.png" width="84" height="84" alt="">
+      <h1>Wizuale</h1>
+      <p class="tagline">The picture fills the TV.</p>
+      <p class="lead">Two apps. <b>Wizuale</b> plays real Milkdrop presets, full screen, on Apple TV. <b>Wizuale Mic</b> is separate, on your iPhone. Same Wi-Fi, and the picture follows the sound in the room.</p>
+      <p class="note">Apple TV and iPhone. No account.</p>
+    </header>
+
+    <figure class="shelf">
+      <img src="assets/top-shelf.jpg" width="1920" height="596" alt="Wizuale on the Apple TV shelf: a glowing, folded form in cyan, gold and violet.">
+      <figcaption class="cap">On the Apple TV shelf, before you open it.</figcaption>
+    </figure>
+
+    <figure class="screen">
+      <div class="bezel">
+        <img id="frame" src="assets/visuals/storm.jpg" width="480" height="270" alt="A bright yellow and black Milkdrop preset, full screen.">
+      </div>
+      <div class="strip" role="tablist" aria-label="Presets">
+        <button type="button" role="tab" class="is-on" aria-selected="true" data-src="assets/visuals/storm.jpg" data-alt="A bright yellow and black Milkdrop preset, full screen."><img src="assets/visuals/storm.jpg" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/graffiti.jpg" data-alt="A kaleidoscopic Milkdrop preset in red, green and blue."><img src="assets/visuals/graffiti.jpg" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/photon.jpg" data-alt="A blue symmetrical Milkdrop preset with a bright center."><img src="assets/visuals/photon.jpg" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/spiral.jpg" data-alt="A rainbow ring on black, a Milkdrop preset."><img src="assets/visuals/spiral.jpg" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/splash.jpg" data-alt="A burst of color, a Milkdrop preset."><img src="assets/visuals/splash.jpg" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/waves.jpg" data-alt="Wavy stripes in red, white and blue, a Study of Space preset."><img src="assets/visuals/waves.jpg" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/neon.jpg" data-alt="A neon pinwheel, a Study of Space preset."><img src="assets/visuals/neon.jpg" alt=""></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/visuals/rings.jpg" data-alt="Soft concentric rings, a Study of Space preset."><img src="assets/visuals/rings.jpg" alt=""></button>
+      </div>
+      <figcaption class="cap">Open it, and a preset takes the whole screen. A few of them are here, including some from <a href="https://studyofspace.gallery">Study of Space</a>.</figcaption>
+    </figure>
+
+    <section class="split" aria-labelledby="two">
+      <h2 id="two">Two separate apps</h2>
+      <p class="section-lead">One lives on the television. The other lives on the phone. They meet only on your Wi-Fi.</p>
+      <div class="apps">
+        <article class="app" id="tv">
+          <p class="platform">Apple TV</p>
+          <h3>Wizuale</h3>
+          <img class="shot wide" src="assets/icon-tv.jpg" width="800" height="480" alt="">
+          <p>Put on a record, or play music on the TV. The preset fills the screen. Move to another one with the remote, or let the next one come on by itself.</p>
+        </article>
+        <article class="app" id="iphone">
+          <p class="platform">iPhone</p>
+          <h3>Wizuale Mic</h3>
+          <img class="shot square" src="icon.png" width="256" height="256" alt="">
+          <p class="status"><span class="dot" aria-hidden="true"></span>Connected to Apple TV</p>
+          <p>A second app. On the same Wi-Fi it finds the television and shows that connection on the phone. It sends the sound in the room, so the visuals react to what you hear. Pick a preset there, or leave them to advance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Features">
+      <article class="f">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="22" height="14" rx="2"/><path d="M10 23h8M14 19v4" stroke-linecap="round"/></svg></div>
+        <h3>Full screen</h3>
+        <p>The visual is the television. Once it is playing, that is the whole picture.</p>
+      </article>
+      <article class="f">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 16c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/><rect x="11" y="4" width="6" height="10" rx="3"/></svg></div>
+        <h3>The sound in the room</h3>
+        <p>Connect the iPhone app. From then on, the picture reacts to what the phone hears.</p>
+      </article>
+      <article class="f">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="8" height="8" rx="1.5"/><rect x="16" y="4" width="8" height="8" rx="1.5"/><rect x="4" y="16" width="8" height="8" rx="1.5"/><rect x="16" y="16" width="8" height="8" rx="1.5"/></svg></div>
+        <h3>Pick a preset</h3>
+        <p>Choose one on the phone and the TV stays with it. Or step through them from the remote.</p>
+      </article>
+      <article class="f">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14a8 8 0 1 0 2.3-5.6"/><path d="M6 5v5h5"/></svg></div>
+        <h3>Auto-advance</h3>
+        <p>Leave it on and the preset changes by itself. Pick one when you want the picture to stay.</p>
+      </article>
+    </section>
+
+    <section class="closing">
+      <h2>Put the music on.<br>Let the room move the picture.</h2>
+      <p>Wizuale on Apple TV. Wizuale Mic on iPhone.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="ftop">
+        <a class="sos" href="https://studyofspace.gallery" target="_blank" rel="noopener">
+          <span class="posters" aria-hidden="true"><img src="assets/sos/stripewave.svg" alt=""><img src="assets/sos/ring-orchid.svg" alt=""><img src="assets/sos/ring-flame.svg" alt=""></span>
+          <span class="txt"><span class="k">Looking for a cool wallpaper?</span><span class="v"><span class="line">Try <b>Study of Space</b> for free<span class="arr">&#8599;</span></span></span></span>
+        </a>
+        <a class="sos" href="https://pssst.dawidw.pl" target="_blank" rel="noopener">
+          <span class="mini" aria-hidden="true"><svg viewBox="0 0 76 68"><rect x="6" y="14" width="64" height="42" rx="8" fill="#141418" stroke="#2c2c2e"/><path d="M28 14h20v8.5c0 5-3.4 7.5-10 7.5s-10-2.5-10-7.5V14z" fill="#000"/><circle cx="46" cy="20" r="3" fill="#0A84FF"/></svg></span>
+          <span class="txt"><span class="k">Your bot wants something</span><span class="v"><span class="line"><b>Pssst</b>, the notch companion<span class="arr">&#8599;</span></span></span></span>
+        </a>
+        <a class="sos" href="https://awake.dawidw.pl" target="_blank" rel="noopener">
+          <span class="mini" aria-hidden="true"><svg viewBox="0 0 76 68"><rect x="6" y="14" width="64" height="42" rx="8" fill="#141418" stroke="#2c2c2e"/><g fill="none" stroke="#ff9f0a" stroke-width="1.7" stroke-linecap="round"><circle cx="38" cy="35" r="6"/><path d="M38 22v3.2M38 44.8V48M25 35h3.2M47.8 35H51M28.2 25.2l2.2 2.2M45.6 42.6l2.2 2.2M47.8 25.2l-2.2 2.2M30.4 42.6l-2.2 2.2"/></g></svg></span>
+          <span class="txt"><span class="k">Keep the Mac awake</span><span class="v"><span class="line"><b>Awake</b>, in the menu bar<span class="arr">&#8599;</span></span></span></span>
+        </a>
+      </div>
+      <div class="fine">
+        <span class="left"><span class="made">Wizuale is an independent app built by <a href="https://dawidw.pl" target="_blank" rel="noopener">Dawid</a> and <a href="https://sature.studio" target="_blank" rel="noopener"><svg class="mark" viewBox="0.3 9.6 80.1 80.1" role="img" aria-label="Sature Studio"><path d="M63.3569 9.66895C64.2632 9.66895 64.7171 9.66914 65.1001 9.6875C73.3337 10.0826 79.9198 16.6687 80.3149 24.9023C80.3333 25.2853 80.3335 25.7392 80.3335 26.6455V49.6689C80.3335 71.7602 62.4247 89.6688 40.3335 89.6689H17.3101C16.4038 89.6689 15.9499 89.6687 15.5669 89.6504C7.33328 89.2553 0.747159 82.6692 0.352051 74.4355C0.333694 74.0526 0.333496 73.5987 0.333496 72.6924V49.6689C0.333497 27.5777 18.2423 9.66912 40.3335 9.66895H63.3569Z" fill="currentColor"/><path class="brand-glyph" d="M40.5 24.416C42.1566 24.4163 43.5 25.7603 43.5 27.417V42.2578L53.9941 31.7637C55.1657 30.5921 57.0657 30.5921 58.2373 31.7637C59.4082 32.9353 59.4087 34.8355 58.2373 36.0068L47.7441 46.5H62.584C64.2404 46.5004 65.5838 47.8436 65.584 49.5C65.5837 51.1564 64.2403 52.4996 62.584 52.5H47.7432L58.2373 62.9941C59.4083 64.1658 59.4087 66.0659 58.2373 67.2373C57.0659 68.4087 55.1658 68.4083 53.9941 67.2373L43.5 56.7432V71.584C43.4996 73.2403 42.1564 74.5837 40.5 74.584C38.8436 74.5838 37.5004 73.2404 37.5 71.584V56.7441L27.0068 67.2373C25.8355 68.4087 23.9353 68.4082 22.7637 67.2373C21.5921 66.0657 21.5921 64.1657 22.7637 62.9941L33.2578 52.5H18.417C16.7603 52.5 15.4163 51.1566 15.416 49.5C15.4162 47.8433 16.7602 46.5 18.417 46.5H33.2568L22.7637 36.0068C21.5921 34.8353 21.5921 32.9352 22.7637 31.7637C23.9352 30.5921 25.8353 30.5921 27.0068 31.7637L37.5 42.2568V27.417C37.5 25.7602 38.8433 24.4162 40.5 24.416Z"/></svg>Sature</a>.</span><span class="note2">&copy; 2026</span></span>
+        <span class="links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var frame = document.getElementById("frame");
+      var buttons = Array.prototype.slice.call(document.querySelectorAll(".strip button"));
+      if (!frame || !buttons.length) return;
+      var i = 0;
+      var timer = null;
+      function show(n) {
+        i = (n + buttons.length) % buttons.length;
+        var b = buttons[i];
+        frame.src = b.getAttribute("data-src");
+        frame.alt = b.getAttribute("data-alt");
+        buttons.forEach(function (other, idx) {
+          var on = idx === i;
+          other.classList.toggle("is-on", on);
+          other.setAttribute("aria-selected", on ? "true" : "false");
+        });
+      }
+      function start() {
+        stop();
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        timer = setInterval(function () { show(i + 1); }, 4200);
+      }
+      function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+      buttons.forEach(function (b, idx) {
+        b.addEventListener("click", function () {
+          show(idx);
+          start();
+        });
+      });
+      var screen = document.querySelector(".screen");
+      if (screen) {
+        screen.addEventListener("mouseenter", stop);
+        screen.addEventListener("mouseleave", start);
+        screen.addEventListener("focusin", stop);
+        screen.addEventListener("focusout", start);
+      }
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) stop();
+        else start();
+      });
+      show(0);
+      start();
+    })();
+  </script>
+</body>
+</html>

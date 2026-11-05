@@ -1,0 +1,24 @@
+# Wizuale
+
+> Wizuale is two separate apps. On Apple TV, real Milkdrop presets fill the screen when you play a record or music on the television. Wizuale Mic is a second app, for iPhone, on the same Wi-Fi. After it connects, the phone shows the Apple TV and sends the sound in the room so the visuals can follow what you hear. You can pick a preset on the phone, or let them advance on their own.
+
+Wizuale is an independent app built by Dawid Woźniak and Sature. The microphone audio stays on the local Wi-Fi between the iPhone and the Apple TV. There is no account.
+
+## What it does
+
+- Full screen Milkdrop presets on Apple TV
+- Wizuale Mic, a separate iPhone app, sends the sound in the room over the same Wi-Fi
+- The phone shows which Apple TV it is connected to
+- Pick a preset, or leave auto-advance on
+
+## Product
+
+- [Wizuale](https://wizuale.dawidw.pl/): visuals for Apple TV, plus Wizuale Mic for iPhone
+- [Privacy](https://wizuale.dawidw.pl/privacy.html): the microphone stream stays on your Wi-Fi, and there is no account
+- [Terms](https://wizuale.dawidw.pl/terms.html): terms of use
+
+## Author
+
+- [Dawid Woźniak](https://dawidw.pl): Product Designer from Poland
+- [Dawid on X](https://x.com/Dawidwu)
+- [Sature](https://sature.studio): design studio co-run by Dawid
